@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+}
+
+nav{
+    align-items: center;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.logo{
+    width: 5vw;
+}
+
+.btn-mobile{
+    padding: 0px 20px 0px 25px;
+}
+
+.traco-um{
+    background-color: #fff;
+    min-height: 3px;
+    max-height: 6px;
+    margin: 6px 0;
+    transition: .4s;
+    width: 28px;
+}
+
+.traco-dois{
+    background-color: #fff;
+    min-height: 3px;
+    max-height: 6px;
+    margin: 6px 0;
+    transition: .4s;
+    width: 28px;
+}
+
+.traco-tres{
+    background-color: #fff;
+    min-height: 3px;
+    max-height: 6px;
+    margin: 6px 0;
+    transition: .4s;
+    width: 28px;
+}
+
+
+.mudar .traco-um{
+    -webkit-transform: rotate(-45deg) translate(-9px,6px);
+    transform: rotate(-45deg) translate(-8px,6px);
+}
+
+.mudar .traco-dois{
+    opacity: 0;
+}
+
+.mudar .traco-tres{
+    transform: rotate(45deg) translate(-6px,-5px);
+}
