@@ -8,8 +8,9 @@ module.exports = {
         filename: './app.js'
     },
     devServer: {
-        port: 8000,
+        port: 3000,
         contentBase: './public',
+        proxy: { "/api/**": { target: 'http://localhost:8000', secure: false }  }
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -35,15 +36,6 @@ module.exports = {
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
             loader: 'file'
-        },{
-            test: /\.(jpe?g|gif|png|svg)$/i,
-            use: [
-            {
-                loader: 'url-loader',
-                options: {
-                limit: 10000
-            }
-            }]
         }]
     }
 }

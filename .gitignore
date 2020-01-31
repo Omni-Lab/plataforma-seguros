@@ -2,6 +2,7 @@
 
 # dependencies
 /front-end/node_modules
+/front-end/antigo_src/
 /.pnp
 .pnp.js
 

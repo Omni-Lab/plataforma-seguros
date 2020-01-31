@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import logo from '../assets/img/logo.png'
+// import logo from '../assets/img/logo.png'
 
 class Nav extends Component {
     constructor(props){
         super(props)
         this.state = {btnmobile:'btn-mobile'}
+        this.Mobile = this.Mobile.bind(this);
 
     }
 
-    Mobile = () =>{
+    Mobile(e){
         if (this.state.btnmobile == 'btn-mobile'){
             this.setState({btnmobile:'btn-mobile mudar'})
         }
@@ -26,9 +27,8 @@ class Nav extends Component {
                             <div className="traco-dois"></div>
                             <div className="traco-tres"></div>
                     </div>
-                    <img src={logo} className='logo' alt=""/>
-                    <button>yeah</button>
-
+                    {/* <img src={logo} className='logo' alt=""/> */}
+                    <button className='btn'>yeah</button>
                 </nav>
             </div>
 

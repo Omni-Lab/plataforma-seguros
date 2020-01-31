@@ -1,43 +1,36 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 class FamiliaSilva extends Component{
     constructor (props){
         super(props);
-        this.state = {tipo: '', showComponent: false, args:this.props.location.state.args};
+        this.state = {tipo: [], showComponent: false};
+        this.gerarPessoas = this.gerarPessoas.bind(this);
 
     }
 
     
-    gerarPessoas = () =>{
+    gerarPessoas(){
         let lista = []
-        for (let i of JSON.parse(this.state.tipo)){
-            lista.push('Seu nome é '+i.nome+' e seu id é '+i.id)
+        for (let i of this.state.tipo){
+            lista.push('Seu nome é '+i.nome+' e seu id é ')
         }
         let pessoas = lista.map((lista) => {
-            return <li>{lista}</li>
+            return <p>{lista}</p>
         })
         return pessoas
     }
 
     componentDidMount(){
-        const url = '/api/pessoa'
-        fetch(url,{
-          method: "GET",
-        })
-        .then(res => res.json())
-        .then((data) => {
-            const dataSet = JSON.stringify(data)
-            this.setState({tipo: dataSet})
-            this.setState({showComponent: true,})
-            
-        }).catch(console.log)
+        axios.get(`api/pessoa`)
+            .then(resp => {this.setState({...this.state, tipo: resp.data, showComponent: true});console.log(this.state)})
     }
 
     
-
     render (){
         return(
             <div>
-                {this.state.args}
+                <h1>aaaaaaaaaaa</h1>
+                {/* {this.state. args:this.props.location.state.args} */}
                 {this.state.showComponent ? this.gerarPessoas() : null}
             </div>
             ) 
